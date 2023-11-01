@@ -1,23 +1,16 @@
+// Definición de la interfaz Verifier (Verificador)
 class Verifier {
-    constructor() {
-      this.nextVerifier = null;
-    }
-  
-    setNext(verifier) {
-      this.nextVerifier = verifier;
-    }
-    processRequest(request) {
-      // Implementa la lógica de verificación común aquí.
-      // Puedes realizar verificaciones que se aplican a todos los verificadores.
-      // Luego, pasa la solicitud al siguiente verificador en la cadena, si existe.
-      if (this.nextVerifier) {
-        return this.nextVerifier.processRequest(request);
-      } else {
-        // Si no hay más verificadores en la cadena, devuelve true para indicar que la solicitud ha pasado todas las verificaciones.
-        return true;
-      }
+  constructor() {
+    if (this.constructor === Verifier) {
+      throw new Error("No se puede instanciar una interfaz.");
     }
   }
+
+  // Método que debe ser implementado por las clases concretas
+  processRequest(request) {
+    throw new Error("El método 'processRequest' debe ser implementado.");
+  }
+}
   
   module.exports = Verifier;
   
