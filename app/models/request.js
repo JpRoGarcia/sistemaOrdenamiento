@@ -1,27 +1,23 @@
+// Request.js
+
+// Clase que representa una solicitud con datos y dirección IP.
 class Request {
-    constructor(rawData, ipAddress) {
-      this.rawData = rawData;
-      this.ipAddress = ipAddress;
-      this.sanitizedData = null;
-      this.cached = false;
-    }
-  
-    getSanitizedData() {
-      // Implementar lógica de saneamiento de datos
-    }
-  
-    getIpAddress() {
-      return this.ipAddress;
-    }
-  
-    isCached() {
-      return this.cached;
-    }
-  
-    setCached() {
-      this.cached = true;
-    }
+  constructor(rawData, ipAddress) {
+    this.rawData = rawData; // Almacena la información de la solicitud.
+    this.ipAddress = ipAddress; // Almacena la dirección IP de la solicitud.
   }
-  
-  module.exports = Request;
-  
+
+  // Retorna los datos de la solicitud.
+  getRawData() {
+    return this.rawData;
+  }
+
+  // Retorna la dirección IP de la solicitud.
+  getIpAddress() {
+    return this.ipAddress;
+  }
+}
+
+module.exports = Request;
+
+

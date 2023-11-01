@@ -1,16 +1,17 @@
-// Definición de la interfaz Verifier (Verificador)
+// Verifier.js
+
+// Clase abstracta que representa un verificador en una cadena de verificación.
 class Verifier {
-  constructor() {
-    if (this.constructor === Verifier) {
-      throw new Error("No se puede instanciar una interfaz.");
-    }
+  setNext(verifier) {
+    this.nextVerifier = verifier; // Configura el siguiente verificador en la cadena.
   }
 
-  // Método que debe ser implementado por las clases concretas
   processRequest(request) {
-    throw new Error("El método 'processRequest' debe ser implementado.");
+    // Implementación de procesamiento de solicitud aquí.
+    return true; // Reemplazar con la lógica real.
   }
 }
-  
-  module.exports = Verifier;
+
+module.exports = Verifier;
+
   
